@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: beige;
+}
+
+section {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.quiz {
+    font-size: 30px;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+}
+
+.div-1, .div-2, .div-3, .div-4 {
+    background-color: sandybrown;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.change {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    background-color: blue;
+    color: white;
+}
+
+.init {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    background-color: brown;
+    color: white;
+    margin-left: 10px;
+}

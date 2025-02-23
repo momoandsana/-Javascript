@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: linear-gradient(125deg, #ee9ca7, #ffdde1);
+}
+
+input {
+    text-align: center;
+    font-size: 30px;
+}
+
+.cal-btn {
+    background-color: #FC5000;
+    color: white;
+    border: none;
+    font-size: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+    transition: transform 300ms ease;
+}
+
+.td-btn {
+    text-align: center;
+}
+
+.cal-btn:hover {
+    transform: scale(1.05);
+}
+
+#td-result {
+    height: 300px;
+    text-align: center;
+    background-color: seashell;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+td {
+    padding: 30px;
+}
+
+table {
+    background-color: khaki;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+

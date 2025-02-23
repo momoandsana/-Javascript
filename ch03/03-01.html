@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <script>
+          function sum(n1,n2)
+          {
+               let sum=n1+n2;
+               alert(`${n1}+${n2}=${sum}`);
+          }
+
+          sum(5,3);
+
+          let sum3=function sum2(){
+               alert('함수를 변수에 대입합니다');
+          }
+
+          //sum2();
+          sum3();
+
+          function example(){
+
+          }
+
+          example.my_name='hoya';
+          example.dlab='정자';
+
+          alert(`이름:${example.my_name}\n 디랩: ${example.dlab}`);
+
+          function a(){
+               function b(){
+                    alert('중첩 함수입니다');
+               }
+               b();
+          }
+          
+          a();
+     </script>
+</body>
+</html>

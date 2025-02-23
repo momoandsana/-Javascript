@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <script>
+          let com_n=Math.floor(Math.random()*(5-1+1))+1;// 1에서 5 랜덤
+
+          let n1=parseInt(prompt('1에서 5까지의 숫자를 입력해주세요'),0);
+          let n2=parseInt(prompt('1에서 5까지의 숫자를 입력해주세요'),0);
+
+          if(n1==n2)
+          {
+               alert(`정답!! 숫자는 ${com_n}입니다`);
+          }
+          else{
+               alert(`틀렸습니다. 숫자는 ${com_n}입니다`);
+          }
+
+     </script>
+</body>
+</html>
