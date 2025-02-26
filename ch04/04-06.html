@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="section-name">
+        <button class="btn-name">이름 버튼</button>
+        <div class="div-name"></div>
+
+        <button class="btn-age">나이 버튼</button>
+        <div class="div-age"></div>
+    </section>
+
+    <style>
+        .btn-name{
+            height:50px;
+            width:100px;
+        }
+
+        .btn-age{
+            height:50px;
+            width:100px;
+        }
+
+        .div-name,.div-age{
+            width:200px;
+            height:50px;
+            background-color: antiquewhite;
+
+            display:flex; 
+            /* 가로축(main axis), 세로축(cross axis), 하나만 있다면 공백 박스 공백 */
+            justify-content: center;
+            align-items:center;
+            /* 교차축 세로방향 
+            공백
+            박스
+            공백
+            */
+            font-size:20px;
+        }
+    </style>
+    
+    <script>
+        const btn_name=document.querySelector('.btn-name');
+        const div_name=document.querySelector('.div-name');
+
+        btn_name.addEventListener('click',()=>{
+            let prompt_name=prompt('이름을 입력해 주세요.','홍길동');
+            div_name.innerText=prompt_name;
+        })
+
+        const btn_age=document.querySelector('.btn-age');
+        const div_age=document.querySelector('.div-age');
+
+        btn_age.addEventListener('click',()=>{
+            let prompt_age=prompt('나이를 입력해주세요.',11);
+            div_age.innerText=prompt_age;
+        })
+    </script>
+</body>
+</html>
