@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <div class="name_div"></div>
+        <button class="name_btn">버튼</button>
+    </section>
+    
+    <script>
+        const name_div=document.querySelector('.name_div');
+        const name_btn=document.querySelector('.name_btn');
+
+        const item=document.createElement('div');
+        item.textContent='Hoya';
+        item.style.fontSize='30px';
+
+        name_btn.addEventListener('click',()=>{
+            name_div.appendChild(item);
+            console.log(name_div.innerHTML);
+        })
+
+        
+    </script>
+</body>
+</html>

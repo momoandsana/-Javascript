@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="name_div"></div>
+        <button class="name_btn">이름 버튼</button>
+    </section>
+
+    <script>
+        const name_btn=document.querySelector('.name_btn');
+        const name_div=document.querySelector('.name_div');
+
+        name_btn.style.backgroundColor='blue';
+        name_btn.style.color='white';
+        name_btn.style.fontSize='50px';
+
+        name_btn.addEventListener('click',()=>{
+            name_div.textContent='Hoya';
+            name_div.style.fontSize='50px';
+        })
+    </script>
+</body>
+</html>
