@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section {
+    border: 1px solid black;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    background-color: antiquewhite;
+}
+
+div {
+    text-align: center;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    width: 200px;
+    font-size: 30px;
+}
+
+.start {
+    background-color: blue;
+    color: white;
+}
+
+.stop {
+    background-color: red;
+    color: white;
+}
+
+.reset_btn {
+    background-color: lightpink;
+    color: white;
+}

@@ -8,11 +8,11 @@
 <body>
     <button class="name_btn">이름 버튼</button>
     <button class="remove_btn">삭제 버튼</button>
-    <section calss="container"></section>
+    <section class="container"></section>
 
     <script>
         const name_btn=document.querySelector('.name_btn');
-        const remove_btn=document.querySelector('.remover_btn');
+        const remove_btn=document.querySelector('.remove_btn');
         const container=document.querySelector('.container')
 
         name_btn.addEventListener('click',()=>{
@@ -21,12 +21,14 @@
             name_div.setAttribute('class','name');
             container.appendChild(name_div);
             name_div.textContent='호야';
+            console.dir(container);
 
         })
 
         remove_btn.addEventListener('click',()=>{
             const name_div=document.querySelector('.name');
             container.removeChild(name_div);
+            console.dir(container);
         })
 
     </script>

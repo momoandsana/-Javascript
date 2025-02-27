@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <table>
+            <tr>
+                <th colspan="5">현재 시간 표시</th>
+            </tr>
+            <tr>
+                <td class="content c_hours">00</td>
+                <td>:</td>
+                <td class="content c_minutes">00</td>
+                <td>:</td>
+                <td class="content c_seconds">00</td>
+            </tr>
+        </table>
+    </section>
+
+    <style>
+        *{
+            margin:0;
+            box-sizing: border-box;
+        }
+
+        section{
+            display: flex;
+            justify-content: center;
+            width:100%;
+            
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+
+        table{
+            width: 50%;
+            padding:30px;
+            background-color:lightpink;
+        }
+
+        th{
+            font-size:50px;
+            padding-bottom:50px;
+        }
+
+        td{
+            text-align: center;
+            font-size:50px;
+        }
+    </style>
+    
+    <script>
+        let current_hours=document.querySelector('.c_hours');
+        let current_minutes=document.querySelector('.c_minutes');
+        let current_seconds=document.querySelector('.c_seconds');
+
+        let hours='',minutes='',seconds='';
+        let meridiem='';
+
+        function current_clock(){
+            let date=new Date();
+            hours=date.getHours();
+            minutes=date.getMinutes();
+            seconds=date.getSeconds();
+        }
+        
+        current_clock();
+
+        current_hours.innerHTML=`${hours}`;
+        current_minutes.innerHTML=`${minutes}`;
+        current_seconds.innerHTML=`${seconds}`;
+
+        
+
+    </script>
+
+</body>
+</html>
