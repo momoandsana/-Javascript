@@ -23,6 +23,11 @@
             name_div.textContent='호야';
             console.log(name_div.innerHTML);
             console.log('자식 개수: ',container.childElementCount);
+
+        remove_btn.addEventListener('click',()=>{
+            const name_div=document.querySelector('.name');
+            container.removeChild(name_div);
+        })
     })
     </script>
     
