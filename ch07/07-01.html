@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        localStorage.setItem('name','jacob');
+
+        const name=localStorage.getItem('name');
+        console.log(`Name : ${name}`);
+
+        localStorage.setItem('age','100');
+
+        localStorage.removeItem('name');
+
+        localStorage.setItem('language','javascript');//
+
+        const keyAtIndex=localStorage.key(0);
+
+        console.log(`key at index 0 : ${keyAtIndex}`);
+
+
+    </script>
+</body>
+</html>
