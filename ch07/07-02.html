@@ -12,11 +12,24 @@
             <button class="btn_name">이름 저장 버튼</button>
         </div>
         <button class="btn_storage">이름 불러오기</button>
-        <p id="display_name"></p>
+        <p id="my_name"></p>
     </section>
     
     <script>
-       
+       const btn_name=document.querySelector('.btn_name');
+       const btn_storage=document.querySelector('.btn_storage');
+       let input_name=document.querySelector('#input_name');
+       let my_name=document.querySelector('#my_name');
+
+       btn_name.addEventListener('click',()=>{
+        let my_name=input_name.value;// html 에서 input이니까
+        localStorage.setItem('name',my_name);
+        input_name.value='';
+       });
+
+       btn_storage.addEventListener('click',()=>{
+        my_name.innerText=localStorage.getItem('name');
+       });
 
     </script>
 </body>
