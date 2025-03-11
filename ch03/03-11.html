@@ -17,12 +17,12 @@
             
             밥먹기(food) 
             {
-                alert(this.이름 + '이는 ' + food + '을/를 먹습니다.');
+                alert(this.이름 + '이는 ' + food + '을 먹습니다.');
             }
             
             공부하기(subject) 
             {
-                alert(this.이름 + '이는 ' + subject + '을/를 공부합니다.');
+                alert(this.이름 + '이는 ' + subject + '을 공부합니다.');
             }
         }
 
@@ -34,6 +34,10 @@
         console.log(`${student1.이름}이는 ${student1.나이}살 입니다.`);
         console.log(`${student2.이름}이는 ${student2.나이}살 입니다.`);
         console.log(`${student3.이름}이는 ${student3.나이}살 입니다.`);
+
+        student1.밥먹기('라면');
+        student2.밥먹기('김밥');
+        student3.공부하기('리액트');
 
     </script>
 </body>
