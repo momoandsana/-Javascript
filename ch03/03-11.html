@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student 
+        {
+            constructor(이름, 나이) 
+            {
+                this.이름 = 이름;
+                this.나이 = 나이;
+            }
+            
+            밥먹기(food) 
+            {
+                alert(this.이름 + '이는 ' + food + '을/를 먹습니다.');
+            }
+            
+            공부하기(subject) 
+            {
+                alert(this.이름 + '이는 ' + subject + '을/를 공부합니다.');
+            }
+        }
+
+
+        const student1 = new Student('준환', 16);
+        const student2 = new Student('우진', 14);
+        const student3 = new Student('아준',14);
+
+        console.log(`${student1.이름}이는 ${student1.나이}살 입니다.`);
+        console.log(`${student2.이름}이는 ${student2.나이}살 입니다.`);
+        console.log(`${student3.이름}이는 ${student3.나이}살 입니다.`);
+
+    </script>
+</body>
+</html>

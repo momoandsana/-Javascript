@@ -8,6 +8,8 @@ let gugudan = numbers.map(function (value) {
     return dan * value;
 })
 
+console.log(gugudan)
+
 gugudan.forEach((value, index) => {
     gugudan_print += `${dan} X ${index + 1} = ${value}\n`;
 })

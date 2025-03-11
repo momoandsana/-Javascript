@@ -19,33 +19,44 @@
                console.log(`${i}번째 함수 출력`);
           }
           
-          //callThreeTimes(print);
+          callThreeTimes(print);
 
-          callThreeTimes(function(i){
-               // 익명함수->짧고 간단한 작업에서 많이 사용
-               // 따로 함수를 만들지 않고 간단하기 때문에 콜백 함수에서 많이 사용
+         
 
-               console.log(`${i}번째 함수 출력`);
-          })
+          // callThreeTimes(function(i){
+          //      // 익명함수->짧고 간단한 작업에서 많이 사용
+          //      // 따로 함수를 만들지 않고 간단하기 때문에 콜백 함수에서 많이 사용
 
-          const fruits=['apple','banana','cherry'];
+          //      console.log(`${i}번째 함수 출력`);
+          // })
 
-          fruits.forEach(function(value,index,array){
-               console.log(`${index}번째 요소: ${value}`);
-          })
+          ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-          let numbers=[1,2,3,4,5];
+          // const fruits=['apple','banana','cherry'];
 
-          numbers=numbers.map(function(value,index,array){
-               return value*value;
-          })
+          // fruits.forEach(function(value,index,array){
+          //      console.log(`${index}번째 요소: ${value}`);
+          // })
 
-          numbers.forEach(console.log);// 익명함수, 일반함수 같이 console.log 도 가능하다
+          ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-          const numbers=[0,1,2,3,4];
-          const evenNumbers=numbers.filter(function(value){
-               return value%2==0;
-          })
+          // let numbers=[1,2,3,4,5];
+
+          // numbers=numbers.map(function(value,index,array){
+          //      return value*value;
+          // })
+
+          // numbers.forEach(console.log);// 익명함수, 일반함수 같이 console.log 도 가능하다
+
+          ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+          // const numbers=[0,1,2,3,4];
+          // const evenNumbers=numbers.filter(function(value){
+          //      return value%2==0;
+          // })
+
+          // console.log(`원래 배열 : ${numbers}`);
+          // console.log(`짝수만 추출: ${evenNumbers}`);
 
      </script>
 </body>

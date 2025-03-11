@@ -7,14 +7,18 @@
 </head>
 <body>
    <script>
-      let sum_func=function sum(n1,n2){
-         let sum=n1+n2;
-         alert(`${n1}+${n2}=${sum}`);
+     const student={
+      이름:'준환',
+      나이:16,
+      밥먹기:function(food){
+         alert(this.이름+'이는'+food+'을/를'+'먹습니다.');
+      },
+      공부하기:function(subject){
+         alert(this.이름+'이는'+subjec+'을/를 공부합니다');
       }
+     }
 
-      sum(5,3);
-
-
+     
    </script>
 </body>
 </html>
