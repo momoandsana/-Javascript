@@ -13,16 +13,18 @@
           }
      </style>
 
-     <script>
-          const name_div=document.querySelector('div');
-
-          const name_button=document.querySelector('button');
-     </script>
-
      <body>
           <div>이름이 출력됩니다.</div>
           <button>클릭해 주세요.</button>
-
      </body>
+
+     <script>
+          const name_div=document.querySelector('div');
+          const name_button=document.querySelector('button');
+
+          name_button.addEventListener('click',()=>{
+               name_div.innerText='Hoya';
+          });
+     </script>
 </body>
 </html>
