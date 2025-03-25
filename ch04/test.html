@@ -6,7 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    
-    
+    <script>
+        const suspect=['아준','준환','우진'];
+        const criminal='아준';
+        
+        const usual_suspect=suspect.filter((value)=>{
+            return value==criminal;
+        })
+
+        alert(`용의자 ${suspect} 중 범인은 ${usual_suspect}`);
+
+    </script>
 </body>
 </html>
