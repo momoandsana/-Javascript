@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 대결 게임</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            width: 50%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 30px 0;
+            background-color: coral;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .title {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        #input-user {
+            font-size: 20px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .user {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            width: 300px;
+            height: 50px;
+            background-color: cornflowerblue;
+            color: white;
+            font-size: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .com_btn {
+            width: 80px;
+            font-size: 20px;
+            background-color: aquamarine;
+        }
+
+        .com {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .com_n {
+            width: 200px;
+            height: 50px;
+            background-color: blanchedalmond;
+            margin-right: 10px;
+            font-size: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="title">컴퓨터와 숫자 대결 (1 ~ 100)</div>
+
+        <div class="user">
+            <label for="input-user">숫자 입력: </label>
+            <input type="number" id="input-user">
+        </div>
+
+        <div class="com">
+            <div class="com_n"></div>
+            <button class="com_btn">버튼</button>
+        </div>
+
+        <div class="result"></div>
+    </section>
+
+    <script>
+        const com_btn = document.querySelector('.com_btn');
+        const com_n = document.querySelector('.com_n');
+        const result = document.querySelector('.result');
+
+        com_btn.addEventListener('click', () => {
+            let input_num = document.getElementById('input-user').value;
+            let com_num = Math.floor(Math.random() * 100) + 1;
+
+            input_num = parseInt(input_num);
+            com_n.textContent = com_num;
+
+            if (isNaN(input_num)) {
+                result.textContent = '숫자를 입력하세요.';
+                return;
+            }
+
+            if (input_num > com_num) {
+                result.textContent = '승';
+            }
+            else if (input_num < com_num) {
+                result.textContent = '패';
+            }
+            else {
+                result.textContent = '무';
+            }
+        });
+    </script>
+</body>
+</html>

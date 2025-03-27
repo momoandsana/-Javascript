@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름 표시기</title>
+    <style>
+        section {
+            width: 300px;
+            height: 200px;
+            background-color: lightblue;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #name {
+            width: 100px;
+            font-size: 20px;
+            background-color: aliceblue;
+        }
+
+        .btn_name, .btn_remove {
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        .div_text {
+            width: 200px;
+            height: 50px;
+            background-color: antiquewhite;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <input type="text" id="name" />
+            <button class="btn_name">버튼</button>
+            <button class="btn_remove">삭제 버튼</button>
+        </div>
+        <div class="div_text"></div>
+    </section>
+
+    <script>
+        const btn_name = document.querySelector('.btn_name');
+        const btn_remove = document.querySelector('.btn_remove');
+        const div_text = document.querySelector('.div_text');
+
+        const div_name = document.createElement('div');
+        div_name.setAttribute('class', 'name');
+
+        btn_name.addEventListener('click', () => {
+            const input_name = document.getElementById('name').value;
+            div_name.innerHTML = input_name;
+            div_name.style.fontSize = '30px';
+            div_name.style.color = 'blue';
+
+            if (!div_text.contains(div_name)) {
+                div_text.appendChild(div_name);
+            }
+        });
+
+        btn_remove.addEventListener('click', () => {
+            const div_name = document.querySelector('.name');
+            if (div_name) {
+                div_text.removeChild(div_name);
+            }
+        });
+    </script>
+</body>
+</html>
