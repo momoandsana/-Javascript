@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>사칙연산 계산기</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: linear-gradient(125deg, #ee9ca7, #ffdde1);
+    }
+
+    input {
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .cal-btn {
+      background-color: #FC5000;
+      color: white;
+      border: none;
+      font-size: 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 80%;
+      transition: transform 300ms ease;
+    }
+
+    .cal-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .td-btn {
+      text-align: center;
+    }
+
+    #td-result {
+      height: 300px;
+      text-align: center;
+      background-color: seashell;
+      font-size: 30px;
+      border-radius: 10px;
+    }
+
+    td {
+      padding: 30px;
+    }
+
+    table {
+      background-color: khaki;
+      border-radius: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>
+        <input type="number" id="number1" />
+      </td>
+      <td>
+        <input type="number" id="number2" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="td-btn">
+        <button class="cal-btn">사칙연산 버튼</button>
+      </td>
+    </tr>
+    <tr>
+      <td id="td-result" colspan="2"></td>
+    </tr>
+  </table>
+
+  <script>
+    const number1 = document.querySelector('#number1');
+    const number2 = document.querySelector('#number2');
+    const cal_btn = document.querySelector('.cal-btn');
+
+    function sum(n1, n2) {
+      return n1 + n2;
+    }
+
+    function sub(n1, n2) {
+      return n1 - n2;
+    }
+
+    function mul(n1, n2) {
+      return n1 * n2;
+    }
+
+    function div(n1, n2) {
+      return n2 !== 0 ? (n1 / n2).toFixed(2) : '0으로 나눌 수 없습니다';
+    }
+
+    cal_btn.addEventListener('click', () => {
+      const n1 = parseInt(number1.value);
+      const n2 = parseInt(number2.value);
+
+      document.getElementById('td-result').innerText = `
+${n1} + ${n2} = ${sum(n1, n2)}
+${n1} - ${n2} = ${sub(n1, n2)}
+${n1} x ${n2} = ${mul(n1, n2)}
+${n1} / ${n2} = ${div(n1, n2)}
+      `;
+    });
+  </script>
+</body>
+</html>
