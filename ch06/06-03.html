@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <table>
+            <tr>
+                <th colspan="6">현재 시간 표시</th>
+            </tr>
+            <tr>
+                <td class="content c_hours">00</td>
+                <td>:</td>
+                <td class="content c_minutes">00</td>
+                <td>:</td>
+                <td class="content c_seconds">00</td>
+                <td class="content c_meridiem">AM</td>
+            </tr>
+        </table>
+    </section>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            width: 50%;
+            padding: 30px;
+            background-color: lightpink;
+        }
+
+        th {
+            font-size: 50px;
+            padding-bottom: 50px;
+        }
+
+        td {
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+
+    <script>
+        const current_meridiem = document.querySelector('.c_meridiem');
+        const current_hours = document.querySelector('.c_hours');
+        const current_minutes = document.querySelector('.c_minutes');
+        const current_seconds = document.querySelector('.c_seconds');
+
+        function current_clock() {
+            const date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let meridiem = '';
+
+            if (hours >= 12) {
+                meridiem = 'PM';
+                if (hours > 12) hours -= 12;
+            } else {
+                meridiem = 'AM';
+                if (hours === 0) hours = 12;
+            }
+
+            current_hours.innerHTML = String(hours).padStart(2, '0');
+            current_minutes.innerHTML = String(minutes).padStart(2, '0');
+            current_seconds.innerHTML = String(seconds).padStart(2, '0');
+            current_meridiem.innerHTML = meridiem;
+        }
+
+        setInterval(current_clock, 1000);
+    </script>
+</body>
+</html>
