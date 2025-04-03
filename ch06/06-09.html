@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="title">타이머</div>
+        <div class="time">0</div>
+        <div class="btn">
+            <button class="start">시작</button>
+            <button class="stop">정지</button>
+        </div>
+    </section>
+
+    <style>
+        *{
+            margin:0;
+            box-sizing: border-box;
+        }
+
+        section{
+            border:1px solid black;
+            width:500px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+
+            background-color: antiquewhite;
+        }
+        
+        div{
+            text-align:center;
+            height:100px;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            font-size:80px;
+        }
+
+        .btn{
+            display:flex;
+            justify-content: space-around;
+        }
+
+        button{
+            width:200px;
+            font-size:30px;
+        }
+
+        .start{
+            background-color: blue;
+            color:white;
+        }
+
+        .stop{
+            background-color: red;
+            color:white;
+        }
+    </style>
+
+    <script>
+        let time=document.querySelector('.time');
+        const start=document.querySelector('.start');
+        const stop=document.querySelector('.stop');
+
+        let timer_interval;
+        let timer=0;
+
+        start.addEventListener('click',()=>{
+            timer_interval=setInterval(()=>{
+                timer+=1;
+                time.innerText=`${timer}`;
+            },1000)
+        })
+
+        stop.addEventListener('click',()=>{
+            clearInterval(timer_interval);
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            border: 1px solid black;
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: antiquewhite;
+        }
+
+        div {
+            text-align: center;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            font-family: monospace;
+        }
+
+        .time_ms {
+            font-size: 60px;
+            margin-left: 20px;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        button {
+            width: 200px;
+            font-size: 30px;
+        }
+
+        .start {
+            background-color: blue;
+            color: white;
+        }
+
+        .stop {
+            background-color: red;
+            color: white;
+        }
+
+        .reset_btn {
+            background-color: lightpink;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="title">타이머</div>
+        <div class="time_container">
+            <div class="time">00</div>
+            <div class="time_ms">00</div>
+        </div>
+        <div class="btn">
+            <button class="start">시작</button>
+            <button class="stop">정지</button>
+        </div>
+        <button class="reset_btn">초기화 버튼</button>
+    </section>
+
+    <script>
+        let time = document.querySelector('.time');
+        let time_ms = document.querySelector('.time_ms');
+        const start = document.querySelector('.start');
+        const stop = document.querySelector('.stop');
+        const reset = document.querySelector('.reset_btn');
+
+        let timer_interval;
+        let timer = 0;
+        let timer_ms = 0;
+
+        function updateDisplay() {
+            time.innerHTML = String(timer).padStart(2, '0');
+            time_ms.innerHTML = String(timer_ms).padStart(2, '0');
+        }
+
+        start.addEventListener('click', () => {
+            clearInterval(timer_interval);
+            timer_interval = setInterval(() => {
+                timer_ms += 1;
+                if (timer_ms >= 60) {
+                    timer_ms = 0;
+                    timer += 1;
+                }
+                updateDisplay();
+            }, 1000 / 60);
+        });
+
+        stop.addEventListener('click', () => {
+            clearInterval(timer_interval);
+        });
+
+        reset.addEventListener('click', () => {
+            clearInterval(timer_interval);
+            timer = 0;
+            timer_ms = 0;
+            updateDisplay();
+        });
+    </script>
+</body>
+</html>
