@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>쿠키 저장 예제</title>
+</head>
+<body>
+    <h2>쿠키 저장 예제</h2>
+    ID: <input type="text" id="input_id"><br><br>
+    PW: <input type="password" id="input_pw"><br><br>
+
+    <button onclick="saveCookie()">쿠키 저장</button>
+    <button onclick="showCookie()">쿠키 보기</button>
+
+    <p id="cookie_output"></p>
+
+    <script>
+        function saveCookie() {
+            const id = document.getElementById('input_id').value;
+            const pw = document.getElementById('input_pw').value;
+
+            document.cookie = "my_id=" + id + "; path=/";
+            document.cookie = "my_pw=" + pw + "; path=/";
+
+            alert("쿠키 저장 완료");
+        }
+
+        function showCookie() {
+            document.getElementById('cookie_output').innerText = document.cookie;
+        }
+    </script>
+</body>
+</html>

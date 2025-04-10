@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>세션 저장 예제</title>
+</head>
+<body>
+    <h2>세션 저장 예제</h2>
+    ID: <input type="text" id="input_id"><br><br>
+    PW: <input type="password" id="input_pw"><br><br>
+
+    <button onclick="saveSession()">세션 저장</button>
+    <button onclick="showSession()">세션 보기</button>
+
+    <p id="session_output"></p>
+
+    <script>
+        function saveSession() {
+            const id = document.getElementById('input_id').value;
+            const pw = document.getElementById('input_pw').value;
+
+            sessionStorage.setItem("my_id", id);
+            sessionStorage.setItem("my_pw", pw);
+
+            alert("세션 저장 완료");
+        }
+
+        function showSession() {
+            const id = sessionStorage.getItem("my_id");
+            const pw = sessionStorage.getItem("my_pw");
+
+            document.getElementById('session_output').innerText =
+                "ID: " + id + " / PW: " + pw;
+        }
+    </script>
+</body>
+</html>
