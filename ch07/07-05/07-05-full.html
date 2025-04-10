@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            width: 800px;
+            height: 350px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            background-color: lightblue;
+            border-radius: 20px;
+            border: none;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        section > .title {
+            font-size: 30px;
+        }
+
+        section > .password {
+            width: 500px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        section > .password input {
+            font-size: 30px;
+            width: 100px;
+            text-align: center;
+            background-color: linen;
+        }
+
+        .btn_setup {
+            font-size: 30px;
+            width: 200px;
+            padding: 10px;
+            background-color: lightcyan;
+            cursor: pointer;
+        }
+
+        .btn_open {
+            font-size: 30px;
+            width: 200px;
+            padding: 10px;
+            background-color: lightpink;
+            cursor: pointer;
+        }
+
+        .btn_clear {
+            font-size: 30px;
+            width: 400px;
+            padding: 10px;
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="title">
+            <i class="fa-solid fa-person-walking-luggage"></i>
+            여행 가방 비밀번호 
+            <i class="fa-solid fa-key"></i>
+        </div>
+        <div class="password">
+            <input type="number" name="#" id="pw_1">
+            <input type="number" name="#" id="pw_2">
+            <input type="number" name="#" id="pw_3">
+            <input type="number" name="#" id="pw_4">
+        </div>
+        <div class="btn">
+            <button class="btn_setup">설정 버튼</button>
+            <button class="btn_open">열림 버튼</button>
+        </div>
+        <div>
+            <button class="btn_clear">초기화 버튼</button>
+        </div>
+    </section>
+
+    <script>
+        let pw_1 = document.querySelector('#pw_1');
+        let pw_2 = document.querySelector('#pw_2');
+        let pw_3 = document.querySelector('#pw_3');
+        let pw_4 = document.querySelector('#pw_4');
+
+        const btn_setup = document.querySelector('.btn_setup');
+        const btn_open = document.querySelector('.btn_open');
+        const btn_clear = document.querySelector('.btn_clear');
+
+        let password = '';
+        let Pw_1 = '';
+        let Pw_2 = '';
+        let Pw_3 = '';
+        let Pw_4 = '';
+
+        pw_1.value = '0';
+        pw_2.value = '0';
+        pw_3.value = '0';
+        pw_4.value = '0';
+
+        alert('비밀번호를 입력하거나 바꿔주세요.');
+
+        btn_setup.addEventListener('click', () => {
+            Pw_1 = pw_1.value;
+            Pw_2 = pw_2.value;
+            Pw_3 = pw_3.value;
+            Pw_4 = pw_4.value;
+
+            password = Pw_1 + Pw_2 + Pw_3 + Pw_4;
+
+            localStorage.setItem('password', password);
+
+            pw_1.value = '';
+            pw_2.value = '';
+            pw_3.value = '';
+            pw_4.value = '';
+        });
+
+        btn_open.addEventListener('click', () => {
+            Pw_1 = pw_1.value;
+            Pw_2 = pw_2.value;
+            Pw_3 = pw_3.value;
+            Pw_4 = pw_4.value;
+
+            let user_pw = Pw_1 + Pw_2 + Pw_3 + Pw_4;
+            
+            password = localStorage.getItem('password');
+
+            if (user_pw == password) {
+                alert('비밀번호가 일치합니다.\n가방이 열렸습니다.');
+            }
+            else {
+                alert('비밀번호가 일치하지 않습니다.');
+            }
+        });
+
+        btn_clear.addEventListener('click', () => {
+            alert('모든 것이 초기화 됩니다.');
+            pw_1.value = '0';
+            pw_2.value = '0';
+            pw_3.value = '0';
+            pw_4.value = '0';
+
+            password = '';
+
+            localStorage.clear();
+        });
+        
+        
+    </script>
+</body>
+</html>
